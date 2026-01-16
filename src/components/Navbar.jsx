@@ -75,11 +75,10 @@ export default function Navbar() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
           ? 'glass shadow-lg border-b border-dark-200/20 dark:border-dark-700/20'
           : 'bg-transparent'
-      }`}
+        }`}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
@@ -95,7 +94,7 @@ export default function Navbar() {
               S
             </div>
             <span className="font-display font-semibold text-xl hidden sm:block group-hover:text-accent-500 transition-colors">
-              Saarthak
+              Saarthak Gupta
             </span>
           </motion.a>
 
@@ -106,11 +105,10 @@ export default function Navbar() {
                 key={link.name}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
-                className={`px-4 py-2 text-sm font-medium rounded-lg transition-all duration-300 ${
-                  activeSection === link.href.replace('#', '')
+                className={`px-4 py-2 text-sm font-medium rounded-lg transition-all duration-300 ${activeSection === link.href.replace('#', '')
                     ? 'text-accent-500 bg-accent-500/10'
                     : 'text-dark-600 dark:text-dark-300 hover:text-accent-500 hover:bg-dark-100 dark:hover:bg-dark-800'
-                }`}
+                  }`}
               >
                 {link.name}
               </a>
@@ -167,11 +165,10 @@ export default function Navbar() {
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.05 }}
-                    className={`block px-4 py-3 rounded-xl font-medium transition-all ${
-                      activeSection === link.href.replace('#', '')
+                    className={`block px-4 py-3 rounded-xl font-medium transition-all ${activeSection === link.href.replace('#', '')
                         ? 'text-accent-500 bg-accent-500/10'
                         : 'text-dark-600 dark:text-dark-300 hover:bg-dark-100 dark:hover:bg-dark-800'
-                    }`}
+                      }`}
                   >
                     {link.name}
                   </motion.a>

@@ -1,19 +1,18 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { FolderKanban } from 'lucide-react'
-import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import { FolderKanban, ChevronRight } from 'lucide-react'
 import SectionWrapper from '../components/SectionWrapper'
 import AnimatedCard from '../components/AnimatedCard'
 import { projects, projectCategories } from '../data/projects'
 import placeholderImage from '../assets/projects/placeholder.png'
 
 export default function Projects() {
-  const [activeCategory, setActiveCategory] = useState('All')
-  const navigate = useNavigate()
+  const [activeCategory, setActiveCategory] = useState('Data Science')
+  const [showAll, setShowAll] = useState(false)
 
-  const filteredProjects = activeCategory === 'All'
-    ? projects
-    : projects.filter(p => p.category === activeCategory)
+  const filteredProjects = projects.filter(p => p.category === activeCategory)
+  const displayedProjects = showAll ? filteredProjects : filteredProjects.filter(p => p.featured)
 
   return (
     <SectionWrapper id="projects" className="bg-dark-50/50 dark:bg-dark-950/50">
@@ -60,18 +59,11 @@ export default function Projects() {
           {projectCategories.map((category) => (
             <button
               key={category}
-              onClick={() => {
-                if (category === 'All') {
-                  navigate('/projects')
-                  return
-                }
-                setActiveCategory(category)
-              }}
-              className={`px-4 py-2 text-sm font-medium rounded-full transition-all duration-300 ${
-                activeCategory === category
-                  ? 'bg-accent-500 text-white shadow-lg shadow-accent-500/25'
-                  : 'bg-dark-100 dark:bg-dark-800 text-dark-600 dark:text-dark-300 hover:bg-dark-200 dark:hover:bg-dark-700'
-              }`}
+              onClick={() => setActiveCategory(category)}
+              className={`px-4 py-2 text-sm font-medium rounded-full transition-all duration-300 ${activeCategory === category
+                ? 'bg-accent-500 text-white shadow-lg shadow-accent-500/25'
+                : 'bg-dark-100 dark:bg-dark-800 text-dark-600 dark:text-dark-300 hover:bg-dark-200 dark:hover:bg-dark-700'
+                }`}
             >
               {category}
             </button>
@@ -81,7 +73,7 @@ export default function Projects() {
         {/* Projects Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           <AnimatePresence mode="popLayout">
-            {filteredProjects.map((project, index) => (
+            {displayedProjects.map((project, index) => (
               <motion.div
                 key={project.id}
                 layout
@@ -104,10 +96,10 @@ export default function Projects() {
                           e.currentTarget.src = placeholderImage
                         }}
                       />
-                      
+
                       {/* Overlay */}
                       <div className="absolute inset-0 bg-gradient-to-t from-dark-900/90 via-dark-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                      
+
                       {/* Category badge */}
                       <div className="absolute top-4 left-4">
                         <span className="badge badge-accent">
@@ -132,6 +124,31 @@ export default function Projects() {
             ))}
           </AnimatePresence>
         </div>
+
+        {/* View All Projects Button */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.3 }}
+          className="text-center mt-12"
+        >
+          <Link to="/projects">
+            <motion.button
+              className="group inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-dark-100 dark:bg-dark-800 hover:bg-dark-200 dark:hover:bg-dark-700 transition-all duration-300"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              <div className="text-left">
+                <p className="text-sm text-dark-500 dark:text-dark-400">Explore More</p>
+                <p className="font-semibold text-dark-800 dark:text-dark-100 group-hover:text-accent-500 transition-colors">
+                  View All Projects
+                </p>
+              </div>
+              <ChevronRight size={20} className="text-dark-400 group-hover:text-accent-500 group-hover:translate-x-1 transition-all" />
+            </motion.button>
+          </Link>
+        </motion.div>
       </div>
     </SectionWrapper>
   )

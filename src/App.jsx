@@ -14,7 +14,10 @@ import Experience from './sections/Experience'
 import Projects from './sections/Projects'
 import Blogs from './sections/Blogs'
 import Contact from './sections/Contact'
+
+// Pages
 import AllProjects from './pages/AllProjects'
+import Resume from './pages/Resume'
 
 function HomePage() {
   return (
@@ -35,20 +38,24 @@ function App() {
       <CursorGlow />
       <ScrollProgress />
       <Navbar />
-      
+
       <main>
         <Routes>
-          <Route 
-            path="/" 
-            element={<HomePage />} 
+          <Route
+            path="/"
+            element={<HomePage />}
           />
           <Route
             path="/projects"
             element={<AllProjects />}
           />
+          <Route
+            path="/resume"
+            element={<Resume />}
+          />
         </Routes>
       </main>
-      
+
       <Footer />
       <BackToTop />
     </div>

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { ArrowDown, Mail, ChevronRight } from 'lucide-react'
+import { ArrowDown, Mail, ChevronRight, FileText } from 'lucide-react'
 import { personal } from '../data/personal'
 import profileImage from '../assets/profile.jpg'
 import placeholderImage from '../assets/placeholder.png'
@@ -42,7 +42,7 @@ export default function Hero() {
         <div className="absolute top-1/4 -left-20 w-72 h-72 bg-accent-500/20 rounded-full blur-3xl animate-pulse-slow" />
         <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse-slow delay-300" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-pink-500/10 rounded-full blur-3xl" />
-        
+
         {/* Grid pattern */}
         <div className="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,0.03)_1px,transparent_1px)] bg-[size:50px_50px]" />
       </div>
@@ -108,17 +108,15 @@ export default function Hero() {
                 Get in Touch
               </motion.a>
               <motion.a
-                href="#projects"
+                href={personal.resume}
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 className="btn-secondary inline-flex items-center justify-center gap-2"
-                onClick={(e) => {
-                  e.preventDefault()
-                  document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })
-                }}
               >
-                View Projects
-                <ChevronRight size={18} />
+                <FileText size={18} />
+                View Resume
               </motion.a>
             </motion.div>
 
@@ -132,7 +130,7 @@ export default function Hero() {
             <div className="relative">
               {/* Glow effect */}
               <div className="absolute inset-0 bg-gradient-to-br from-accent-500 to-purple-500 rounded-full blur-3xl opacity-20 animate-pulse-slow" />
-              
+
               {/* Image container */}
               <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96">
                 {/* Rotating border */}
@@ -143,7 +141,7 @@ export default function Hero() {
                 >
                   <div className="w-full h-full rounded-full bg-white dark:bg-dark-900" />
                 </motion.div>
-                
+
                 {/* Profile image */}
                 <div className="absolute inset-2 rounded-full overflow-hidden bg-dark-200 dark:bg-dark-700">
                   <img

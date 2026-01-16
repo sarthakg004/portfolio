@@ -64,6 +64,11 @@ export default function Education() {
                     <p className="text-sm text-accent-500 font-medium mt-2">
                       {edu.graduation}
                     </p>
+                    {edu.description && (
+                      <p className="text-sm text-dark-600 dark:text-dark-400 mt-3 leading-relaxed">
+                        {edu.description}
+                      </p>
+                    )}
                   </div>
                 </div>
               </div>

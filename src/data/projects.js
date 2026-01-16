@@ -6,27 +6,30 @@ export const projects = [
     title: "Credit Card Fraud Detection",
     shortDescription: "Real-time fraud detection system using ensemble ML models",
     image: projectPlaceholder,
-    category: "Data Science"
+    category: "Data Science",
+    featured: true
   },
   {
     id: 2,
     title: "OCR Engine for Historical Documents",
     shortDescription: "Custom OCR system for digitizing historical manuscripts",
     image: projectPlaceholder,
-    category: "Software"
+    category: "Software",
+    featured: true
   },
   {
     id: 3,
     title: "Machine Translation (Transformer)",
     shortDescription: "Neural machine translation using custom Transformer architecture",
     image: projectPlaceholder,
-    category: "Quant Projects"
+    category: "Quant Projects",
+    featured: true
   }
 ]
 
 export const projectCategories = [
-  "All",
   "Data Science",
   "Software",
   "Quant Projects"
 ]
+
