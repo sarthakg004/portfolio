@@ -69,7 +69,7 @@ export default function Blogs() {
                         e.currentTarget.src = blogPlaceholder
                       }}
                     />
-                    
+
                     {/* Overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-dark-900/80 via-transparent to-transparent" />
 
@@ -86,9 +86,8 @@ export default function Blogs() {
                     <h3 className="text-lg font-display font-bold text-dark-800 dark:text-dark-100 mb-2 group-hover:text-accent-500 transition-colors line-clamp-2">
                       {blog.title}
                     </h3>
-                    <div className="inline-flex items-center gap-2 text-sm font-medium text-accent-500 dark:text-accent-400">
+                    <div className="text-sm font-medium text-accent-500 dark:text-accent-400">
                       {blog.cta}
-                      <ArrowRight size={16} />
                     </div>
                   </div>
                 </a>
@@ -112,7 +111,7 @@ export default function Blogs() {
           >
             <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center">
               <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/>
+                <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z" />
               </svg>
             </div>
             <div className="text-left">

@@ -14,7 +14,7 @@ const footerLinks = {
   social: [
     { name: 'LinkedIn', icon: Linkedin, href: 'https://www.linkedin.com/in/sarthakgupta14/' },
     { name: 'GitHub', icon: Github, href: 'https://github.com/sarthakg004' },
-    { name: 'Medium', icon: BookOpen, href: 'https://medium.com/@_Sarthak004' },
+    { name: 'Medium', icon: BookOpen, href: 'https://medium.com/@_Sarthak004_' },
     { name: 'Resume', icon: FileText, href: 'https://drive.google.com/file/d/14EhntRMPeou_tTRWHvknH7EB2Pj4DJ_t/view' },
   ],
 }
@@ -60,8 +60,8 @@ export default function Footer() {
               className="inline-flex items-center space-x-2 group"
               whileHover={{ scale: 1.02 }}
             >
-              <div className="w-10 h-10 rounded-xl gradient-bg flex items-center justify-center text-white font-display font-bold text-lg shadow-lg shadow-accent-500/25">
-                S
+              <div className="w-10 h-10 rounded-xl gradient-bg flex items-center justify-center text-white font-display font-bold text-sm shadow-lg shadow-accent-500/25">
+                SG
               </div>
               <span className="font-display font-semibold text-xl group-hover:text-accent-500 transition-colors">
                 Saarthak Gupta

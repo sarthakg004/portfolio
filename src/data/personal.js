@@ -6,7 +6,7 @@ export const personal = {
   social: {
     github: "https://github.com/sarthakg004",
     linkedin: "https://www.linkedin.com/in/sarthakgupta14/",
-    medium: "https://medium.com/@_Sarthak004",
+    medium: "https://medium.com/@_Sarthak004_",
     email: "thesaarthakgupta@gmail.com"
   },
   stats: []

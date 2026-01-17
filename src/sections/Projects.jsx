@@ -81,11 +81,12 @@ export default function Projects() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ delay: index * 0.1 }}
+                className="flex"
               >
-                <AnimatedCard className="h-full">
-                  <div className="card h-full overflow-hidden group">
+                <AnimatedCard className="w-full">
+                  <div className="card h-full overflow-hidden group flex flex-col min-h-[400px]">
                     {/* Image */}
-                    <div className="relative aspect-card overflow-hidden">
+                    <div className="relative aspect-card overflow-hidden flex-shrink-0">
                       <div className="absolute inset-0 bg-gradient-to-br from-accent-500/20 to-purple-500/20" />
                       <img
                         src={project.image}
@@ -109,12 +110,12 @@ export default function Projects() {
 
                     </div>
 
-                    {/* Content */}
-                    <div className="p-6">
+                    {/* Content - flex-grow to fill remaining space */}
+                    <div className="p-6 flex flex-col flex-grow">
                       <h3 className="text-lg font-display font-bold text-dark-800 dark:text-dark-100 mb-2 group-hover:text-accent-500 transition-colors">
                         {project.title}
                       </h3>
-                      <p className="text-sm text-dark-600 dark:text-dark-300 mb-4 line-clamp-2">
+                      <p className="text-sm text-dark-600 dark:text-dark-300 line-clamp-3 flex-grow">
                         {project.shortDescription}
                       </p>
                     </div>

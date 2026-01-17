@@ -12,7 +12,7 @@ export const blogs = [
     tags: ["Machine Learning", "Clustering", "Unsupervised Learning"],
     link: "https://medium.com/gitconnected/understanding-how-k-means-clustering-works-a-detailed-guide-9a2f8009a279",
     image: blogPlaceholder,
-    cta: "Read on Medium →"
+    cta: "Read Now →"
   },
   {
     id: 2,
@@ -23,7 +23,7 @@ export const blogs = [
     tags: ["Data Science", "Visualization", "Dimensionality Reduction"],
     link: "https://medium.com/gitconnected/visualizing-high-dimensional-data-using-t-sne-e206456f486a",
     image: blogPlaceholder,
-    cta: "Read on Medium →"
+    cta: "Read Now →"
   },
   {
     id: 3,
@@ -34,7 +34,7 @@ export const blogs = [
     tags: ["Deep Learning", "Autoencoders", "Neural Networks"],
     link: "https://medium.com/gitconnected/unsupervised-deep-learning-using-auto-encoders-4813bec64d39",
     image: blogPlaceholder,
-    cta: "Read on Medium →"
+    cta: "Read Now →"
   }
 ]
 
